@@ -1,0 +1,58 @@
+services:
+  #PostgreSQL Service
+  admin-db:
+    image: postgres:16.2
+    container_name: admin-db
+    tty: true
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_DB: newlaravel
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      SERVICE_TAGS: dev
+      SERVICE_NAME: postgresql
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    networks:
+      - admin-app-network
+  
+  #PHP Service
+  admin-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: www-admin
+    container_name: admin-app
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www  # Use named volume for persistent data
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - admin-app-network
+
+  #Nginx Service
+  admin-webserver:
+    image: nginx:alpine
+    container_name: admin-webserver
+    tty: true
+    ports:
+      - "8003:8003"
+    volumes:
+      - ./:/var/www  # Use the same named volume for the Nginx service
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - admin-app-network
+#Docker Networks
+networks:
+  admin-app-network:
+    driver: bridge
+
+#Volumes
+volumes:
+  app-data:
+  dbdata:
