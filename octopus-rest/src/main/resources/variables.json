@@ -1,0 +1,29 @@
+ [
+    {
+      "Name": "C",
+      "Value": "Cat",
+      "Description": "Added by restapi",
+      "Scope": {},
+      "IsEditable": true,
+      "Type": "string",
+      "IsSensitive": false
+    },
+    {
+      "Name": "D",
+      "Value": "Dog",
+      "Description": "Added by restapi",
+      "Scope": {},
+      "IsEditable": true,
+      "Type": "string",
+      "IsSensitive": false
+    },
+    {
+      "Name": "E",
+      "Value": "Egg",
+      "Description": "Added by restapi",
+      "Scope": {},
+      "IsEditable": true,
+      "Type": "string",
+      "IsSensitive": false
+    }
+ ]

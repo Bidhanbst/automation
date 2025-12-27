@@ -1,0 +1,3 @@
+Name, Value, Description, Type, IsSensitive
+C, Cat, Added by restapi, String, false
+D, Dog, Added by restapi, String, false

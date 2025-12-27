@@ -1,0 +1,27 @@
+{
+  "MachinePolicyId":"MachinePolicies-182",
+  "Name":"devschdapp2",
+  "IsDisabled":false,
+  "HealthStatus":"Unknown",
+  "HasLatestCalamari":true,
+  "IsInProcess":true,
+  "Endpoint":{
+    "CommunicationStyle":"TentaclePassive",
+    "Name":"",
+    "Uri":"https://DEVSCHDAPP2:10933",
+    "Thumbprint":"0D42EAE9570D83A7DFD36A3F9B5B9AA92B434D17"
+  },
+  "TenantedDeploymentParticipation":"Untenanted",
+  "Roles":[
+    "db.analytics"
+  ],
+  "EnvironmentIds":[
+    "Environments-381"
+  ],
+  "TenantIds":[
+
+  ],
+  "TenantTags":[
+
+  ]
+}
